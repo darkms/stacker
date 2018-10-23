@@ -68,7 +68,7 @@ module Stacker
         STR = '\"[^\"]+\"'
 
         def self.format object
-          formatted = JSON.pretty_generate object
+          formatted = JSON.pretty_generate(object, :indent => "\t")
 
           # put empty arrays on a single line
           formatted.gsub! /: \[\s*\]/m, ': []'
